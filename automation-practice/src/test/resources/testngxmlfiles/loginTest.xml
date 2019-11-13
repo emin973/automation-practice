@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Login tests" >
+  <test  name="ChromeTests">
+    <packages>
+      <package name="com.automationparctice.login" />
+   </packages>
+    
+  </test> <!-- ChromeTests -->
+    <test  name="Internet explorer">
+    <packages>
+      <package name="com.automationparctice.login" />
+   </packages>
+    
+  </test> <!-- ChromeTests -->
+</suite> <!-- Regression -->

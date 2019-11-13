@@ -1,18 +1,19 @@
-package com.automationpractice.com;
+package com.automationpractice.demos;
 
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.Command;
 import org.testng.annotations.Test;
 
 import driver_factory.Driver;
 import utils.Common;
 
-public class WebDriverSwitchDemo extends Driver {
-
+public class WebDriverSwitchDemo extends Driver{
+	
+	
 	@Test
 	public void swicthToWindow() {
+
 		
 		String handle1;
 //		String handle2;
@@ -73,4 +74,5 @@ public class WebDriverSwitchDemo extends Driver {
 	
 	
 	
+
 }

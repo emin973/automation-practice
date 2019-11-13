@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3955" started-at="2019-10-17T22:56:18 EDT" finished-at="2019-10-17T22:56:22 EDT">
+    <groups>
+      <group name="functional">
+        <method signature="LoginTests.Login_with_invalid_userid()[pri:0, instance:com.automationpractice.login.LoginTests@22d7b4f8]" name="Login_with_invalid_userid" class="com.automationpractice.login.LoginTests"/>
+      </group> <!-- functional -->
+    </groups>
+    <test name="Default test" duration-ms="3955" started-at="2019-10-17T22:56:18 EDT" finished-at="2019-10-17T22:56:22 EDT">
+      <class name="com.automationpractice.login.LoginTests">
+        <test-method status="PASS" signature="Login_with_invalid_userid()[pri:0, instance:com.automationpractice.login.LoginTests@22d7b4f8]" name="Login_with_invalid_userid" duration-ms="3918" started-at="2019-10-17T22:56:18 EDT" finished-at="2019-10-17T22:56:22 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_with_invalid_userid -->
+      </class> <!-- com.automationpractice.login.LoginTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
