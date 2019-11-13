@@ -10,35 +10,37 @@ import org.testng.annotations.Test;
 import driver_factory.Driver;
 
 /**
- * September 28 2019
- * 
- * @author emini
+ * September, 28 2019
+ * @author TechCenture
  *
  */
 public class RadioButton extends Driver {
-
+	
 	/**
-	 * Test NG method cannot be STATIC
+	 * Test NG methods can not be static
 	 */
-
 	@Test
-	public void test1() {
-
+	public void test1 () {
 		driver.get("http://testleaf.herokuapp.com/pages/radio.html");
-
+		
 		WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
 		/*
-		 * Explicit wait
+		 * Explicit wait 
 		 */
-
 		WebElement yesElement = driver.findElement(By.id("yes"));
 		WebElement noElement = driver.findElement(By.id("no"));
-
+		
 		webDriverWait.until(ExpectedConditions.visibilityOf(yesElement));
-	//	yesElement.click();
+		yesElement.click();
 		boolean isYesSelected = yesElement.isSelected();
-		Assert.assertTrue(isYesSelected, "YES radio button is not selected");
-
+		Assert.assertTrue(isYesSelected, "Yes radio button is not selected");
 		driver.quit();
 	}
 }
+
+
+
+
+
+
+

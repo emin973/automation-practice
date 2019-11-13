@@ -1,18 +1,45 @@
 package utils;
 
+import java.io.File;
+
+import org.apache.log4j.Logger;
+
+import com.github.javafaker.Faker;
+
+/**
+ * September, 22 2019
+ * @author TechCenture
+ *
+ */
 public class Common {
 	
+	private static Logger logger = Logger.getLogger(Common.class);
+	private static Faker faker = new Faker();
 	
 	public static void sleep(int seconds) {
 		try {
-			Thread.sleep(seconds * 1000);
+			int secondsSleep = seconds * 1000;
+			Thread.sleep(secondsSleep);
+			logger.info("sleep for " + secondsSleep + " seconds");
 		} catch (InterruptedException e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
-
+	}
+	
+	public static String getRandomFirstName () {
+		String randomFirstName = faker.firstName();
+		logger.info("random first name generated : " + randomFirstName);
+		return randomFirstName;
+	}
+	
+	public static String getRandomLastName () {
+		String randomLastName = faker.lastName();
+		logger.info("random last name generated : " + randomLastName);
+		return randomLastName;
 	}
 
-	public static String getRandomEmail(String firstName, String lastName) {
+	public static String getRandomEmail( String firstName, String lastName ) {
 		String[] emails = { "@gmail.com", "@yahoo.com", "@hotmail.com", "@aol.com", "@hotmail.co.uk", "@hotmail.fr",
 				"@msn.com", "@yahoo.fr", "@wanadoo.fr", "@orange.fr", "@comcast.net", "@yahoo.co.uk", "@yahoo.com.br",
 				"@yahoo.co.in", "@live.com", "@rediffmail.com", "@free.fr", "@gmx.de", "@web.de", "@yandex.ru",
@@ -29,11 +56,23 @@ public class Common {
 				"@juno.com", "@optusnet.com.au", "@blueyonder.co.uk", "@bluewin.ch", "@skynet.be", "@sympatico.ca",
 				"@windstream.net", "@mac.com", "@centurytel.net", "@chello.nl", "@live.ca", "@aim.com",
 				"@bigpond.net.au" };
-		return (firstName + "." + lastName + emails[getRandomInt(0, emails.length)]).toLowerCase();
+		return (firstName + "." + lastName + emails [ getRandomInt(0, (emails.length - 1)) ]).toLowerCase();
 	}
-
-	public static int getRandomInt(int min, int max) {
-		return (int) (Math.random() * ((max - min) + 1)) + min;
+	
+	public static int getRandomInt ( int min, int max ) {
+        return (int)(Math.random() * (( max - min ) + 1 )) + min;
+    }
+	
+	public static void deleteFiles ( String directoryPath ) {
+		File file = new File(System.getProperty("user.dir") + directoryPath);
+		if ( file.exists() ) {
+			for ( File file1 : file.listFiles() ) {
+				boolean isFileDeleted = file1.delete();
+				if ( isFileDeleted ) System.out.println("File \"" + file1.toPath().getFileName() 
+						+ "\" deleted");
+				else System.out.println("File \"" + file1.toPath().getFileName()
+						+ "\" not deleted");
+			}
+		}
 	}
-
 }
